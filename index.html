@@ -12,7 +12,7 @@
 
 </head>
 <body>
-<title>v0.1.0</title>
+<title>v0.1.1</title>
 <div>
   <noscript style="text-align: center; position: absolute; left: 19%; top: 20.5%">
    Для полной функциональности этого сайта необходимо включить JavaScript.
@@ -138,20 +138,21 @@ shuffle(num2)
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
-getRandomInt(1,4)
-if (1) {
+var actr = getRandomInt(1,4)
+
+if (actr == 1) {
   ans = num1[0] + num2[0]
 actc.textContent = "+"
 }
-else if (2) {
+else if (actr == 2) {
  ans = num1[0] - num2[0]
 actc.textContent = "-"
 }
-else if (3) {
+else if (actr == 3) {
   ans = num1[0] * num2[0]
 actc.textContent = "∗"
 }
-else if (4) {
+else if (actr == 4) {
   if (num2[0] == 0) {
     shuffle(num2)
   }
