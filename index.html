@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div>
+  <noscript style="text-align: center; position: absolute; left: 19%; top: 20.5%">
+   Для полной функциональности этого сайта необходимо включить JavaScript.
+   Вот <a style="text-decoration: underline; color: blue" href="https://www.enable-javascript.com/ru/">
+   инструкции, как включить JavaScript в вашем браузере</a>.<br><br>
+
+ For full functionality of this site it is necessary to enable JavaScript.
+ Here are the <a style="text-decoration: underline; color: blue" href="https://www.enable-javascript.com/">
+ instructions how to enable JavaScript in your web browser</a>.
+</noscript>
+</div>
+<div style="
+margin-top: -1%;
+margin-left: -3%;
+width: 105%;
+height: 10vh;
+background: #333;
+text-align: center;
+font-family: 'Nunito';
+font-weight: bold;
+font-size: 150%;
+color: white;
+line-height: 11vh;
+border-bottom: 5px solid silver">
+IHateMath
+</div>
+<div style="
+position: absolute;
+left: 53.3%;
+top: 2.5%;
+text-align: center;
+font-size: 100%;
+font-family: 'Nunito';
+color: gray;
+z-index: 1">
+  v0.1.0
+</div>
+<span class="num1" style="
+font-family: Quicksand;
+text-align: center;
+font-size: 250%;
+position: absolute;
+top: 40%;
+left: 48%
+">
+1
+</span>
+<span class="act" style="
+font-family: Quicksand;
+text-align: center;
+position: absolute;
+font-size: 250%;
+top: 40%;
+left: 50%
+">
++
+</span>
+<span class="num2" style="
+font-family: Quicksand;
+text-align: center;
+font-size: 250%;
+position: absolute;
+top: 40%;
+left: 51.9%
+">
+2
+</span>
+<button type="button" name="bt" id="bt" style="
+text-align: center;
+position: absolute;
+top: 51%;
+left: 48%;
+font-family: Quicksand
+z-index: 2;
+">Проверить</button>
+<input type="text" placeholder="Введите ответ" id="answ" style="
+position: absolute;
+top: 48%;
+left: 45.2%;
+font-family: Quicksand
+z-index: 0
+">
+<p id="rightans" style="
+font-family: 'Source Code Pro';
+font-size: 125%;
+color: rgb(0, 255, 0);
+position: absolute;
+left: 47.5%;
+top: 25%;
+z-index: 1
+">Баллы: 0</p>
+<div style="
+background: #2b2b2b;
+border-radius: 15%;
+height: 5%;
+width: 9%;
+position: absolute;
+left: 46.2%;
+top: 27%;
+z-index; 0">
+
+</div>
+<script>
+const button = document.querySelector('#bt');
+const userans = document.querySelector('#answ')
+const num1c = document.querySelector('.num1');
+const num2c = document.querySelector('.num2');
+const actc = document.querySelector('.act');
+const rightansc = document.querySelector('#rightans');
+var num1 = [0,1,2,3,4,5,6,7,8,9];
+var num2 = [0,1,2,3,4,5,6,7,8,9];
+var ans = 1 + 2;
+var total = 0;
+var rightans = 0;
+</script>
+<script class="main">
+const mainmath = () => {
+function shuffle(array) {
+  array.sort(() => Math.random() - 0.5);
+}
+shuffle(num1)
+shuffle(num2)
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+getRandomInt(1,4)
+if (1) {
+  ans = num1[0] + num2[0]
+actc.textContent = "+"
+}
+else if (2) {
+ ans = num1[0] - num2[0]
+actc.textContent = "-"
+}
+else if (3) {
+  ans = num1[0] * num2[0]
+actc.textContent = "∗"
+}
+else if (4) {
+  if (num2[0] == 0) {
+    shuffle(num2)
+  }
+  ans = num1[0] / num2[0]
+actc.textContent = "÷"
+  }
+  total++
+num1c.textContent = num1[0]
+num2c.textContent = num2[0]
+  console.log(ans)
+console.log("Пример №" + total)
+}
+ console.log(button)
+button.addEventListener ('click', () => {
+    if (userans.value == ans) {
+        alert("Правильно!");
+        rightans++
+        rightansc.textContent = "Баллы: " + rightans
+    } else {
+       alert("Неправильно");
+       rightans--
+       rightansc.textContent = "Баллы: " + rightans
+    }
+    mainmath()
+})
+</script>
+</body>
+</html>
